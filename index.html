@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Joke Teller</title>
+</head>
+<body>
+    <h1>Joke Teller</h1>
+    <button id="jokeButton">Tell me a joke</button>
+    <p id="jokeText"></p>
+
+    <script>
+        // Jokes array
+        const jokes = [
+            "Why do programmers prefer iOS development over Android development? Because on iOS, they don't have to deal with Java!",
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "Parallel lines have so much in common. It's a shame they'll never meet.",
+            "Did you hear about the mathematician who's afraid of negative numbers? He'll stop at nothing to avoid them.",
+            "I'm reading a book on anti-gravity. It's impossible to put down!"
+        ];
+
+        // Function to pick a random joke
+        function getRandomJoke() {
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+            return jokes[randomIndex];
+        }
+
+        // Event listener for the button click
+        document.getElementById("jokeButton").addEventListener("click", function () {
+            const jokeText = document.getElementById("jokeText");
+            const joke = getRandomJoke();
+            jokeText.textContent = joke;
+        });
+    </script>
+</body>
+</html>
